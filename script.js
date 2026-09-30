@@ -768,7 +768,7 @@
     if (!AC) return;
     audioCtx = new AC();
     masterGain = audioCtx.createGain();
-    masterGain.gain.value = 0.55;
+    masterGain.gain.value = 1.0;
     var compressor = audioCtx.createDynamicsCompressor();
     compressor.threshold.value = -18;
     compressor.knee.value = 20;
@@ -780,7 +780,7 @@
     delayNode = audioCtx.createDelay(1.0);
     delayNode.delayTime.value = 0.45;
     var dg = audioCtx.createGain();
-    dg.gain.value = 0.3;
+    dg.gain.value = 0.4;
     delayNode.connect(dg);
     dg.connect(masterGain);
   }
@@ -805,8 +805,8 @@
     while (nextNoteTime < audioCtx.currentTime + 0.6) {
       var chord = PROGRESSION[Math.floor(stepIndex / 4) % PROGRESSION.length];
       var noteIdx = stepIndex % 4;
-      if (noteIdx === 0) playNote(chord.bass, nextNoteTime, 2.4, 0.14);
-      playNote(chord.notes[noteIdx], nextNoteTime, 1.6, 0.11);
+      if (noteIdx === 0) playNote(chord.bass, nextNoteTime, 2.4, 0.22);
+      playNote(chord.notes[noteIdx], nextNoteTime, 1.6, 0.18);
       nextNoteTime += 0.75;
       stepIndex++;
     }
