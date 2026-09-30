@@ -830,6 +830,7 @@
   }
 
   function toggleMusic() {
+    hideSoundHint();
     if (musicOn) {
       musicOn = false;
       musicBtn.classList.remove('is-playing');
@@ -862,6 +863,22 @@
     } catch (e) {
       fallbackToAmbient();
     }
+  }
+
+  var soundHintTimer = null;
+  function showSoundHint() {
+    var hint = document.getElementById('sound-hint');
+    if (!hint) return;
+    hint.classList.add('is-on');
+    musicBtn.classList.add('is-hinting');
+    if (soundHintTimer) clearTimeout(soundHintTimer);
+    soundHintTimer = setTimeout(hideSoundHint, 9000);
+  }
+  function hideSoundHint() {
+    if (soundHintTimer) { clearTimeout(soundHintTimer); soundHintTimer = null; }
+    var hint = document.getElementById('sound-hint');
+    if (hint) hint.classList.remove('is-on');
+    musicBtn.classList.remove('is-hinting');
   }
 
   /* ---------- Événements ---------- */
@@ -955,6 +972,7 @@
     setFxForScreen(1);
     updateProgress(1);
     runIntroSequence();
+    setTimeout(showSoundHint, 1800);
 
     if (!reducedMotion) rafId = requestAnimationFrame(loop);
   }
