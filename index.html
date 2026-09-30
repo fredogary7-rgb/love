@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b060a" />
+  <meta name="description" content="Une petite expérience interactive créée spécialement pour Melanie." />
+  <title>Pour Melanie ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="blackout" id="blackout" aria-hidden="true"></div>
+  <div class="blackout-light" id="blackout-light" aria-hidden="true"></div>
+
+  <button id="music-btn" class="music-btn" type="button" aria-label="Activer ou désactiver la musique" title="Musique">
+    <span class="music-icon">♫</span>
+    <span class="music-eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  </button>
+
+  <nav class="progress" id="progress" aria-label="Progression de l'histoire"></nav>
+
+  <main id="app">
+    <!-- 01 : INTRODUCTION -->
+    <section class="screen screen--intro is-active" data-screen="1" aria-label="Introduction">
+      <div class="intro-light" aria-hidden="true"></div>
+      <div class="screen__inner">
+        <p class="intro-line reveal" data-intro="1">Cette expérience a été créée pour une seule personne...</p>
+        <h1 class="name name--glow reveal" data-intro="2">Melanie ❤️</h1>
+        <p class="intro-sub reveal" data-intro="3">Entre si tu veux découvrir pourquoi...</p>
+        <button class="btn btn--primary reveal" type="button" data-intro="4" data-next="2">Commencer ✨</button>
+      </div>
+    </section>
+
+    <!-- 02 : OUVERTURE -->
+    <section class="screen screen--opening" data-screen="2" aria-label="Ouverture">
+      <div class="screen__inner">
+        <h1 class="name name--hero reveal">Melanie</h1>
+        <p class="sub reveal">J'ai quelque chose à te montrer...</p>
+        <button class="btn btn--primary reveal" type="button" data-next="3">Ouvrir ✨</button>
+      </div>
+    </section>
+
+    <!-- 03 : MESSAGE -->
+    <section class="screen screen--message" data-screen="3" aria-label="Message">
+      <div class="screen__inner">
+        <h2 class="name name--small name--gold reveal">Melanie</h2>
+        <p class="lede reveal">il y a des choses qu'on écrit difficilement avec de simples messages...</p>
+        <p class="lede reveal">Alors j'ai décidé de les transformer en quelque chose que tu pourrais découvrir.</p>
+        <button class="btn btn--ghost reveal" type="button" data-next="4">Continuer →</button>
+      </div>
+    </section>
+
+    <!-- 04 : BOUQUET -->
+    <section class="screen screen--flowers" data-screen="4" aria-label="Le bouquet">
+      <div class="screen__inner screen__inner--flowers">
+        <div class="bouquet-wrap">
+          <svg class="bouquet" viewBox="0 0 400 540" role="img" aria-label="Un bouquet de fleurs"></svg>
+        </div>
+        <div class="copy">
+          <p class="reveal">Si je pouvais t'offrir quelque chose qui ne fane jamais,<br />je t'offrirais chaque moment où ton sourire réussit à rendre une journée plus belle.</p>
+          <p class="reveal">Mais puisque les fleurs peuvent faner...<br />j'ai préféré t'offrir quelque chose qui restera ici. ❤️</p>
+          <button class="btn btn--ghost reveal" type="button" data-next="5">J'ai encore quelque chose à te montrer →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 : CHOISIS UNE FLEUR -->
+    <section class="screen screen--choose" data-screen="5" aria-label="Choisis une fleur">
+      <div class="screen__inner">
+        <h2 class="title reveal"><span class="name--floral">Melanie</span>, choisis une fleur...</h2>
+        <div class="flower-choices">
+          <button class="flower-choice reveal" data-flower="1" type="button"><span class="fc-icon">🌸</span><span class="fc-label">La douceur</span></button>
+          <button class="flower-choice reveal" data-flower="2" type="button"><span class="fc-icon">🌷</span><span class="fc-label">Les beaux moments</span></button>
+          <button class="flower-choice reveal" data-flower="3" type="button"><span class="fc-icon">🌹</span><span class="fc-label">Les personnes spéciales</span></button>
+        </div>
+        <p class="choose-result reveal" id="choose-result" hidden></p>
+        <p class="choose-common reveal" id="choose-common" hidden>Tu as choisi celle que tu voulais...<br />et c'est peut-être ça le plus important. ❤️</p>
+        <button class="btn btn--ghost reveal" type="button" id="choose-next" data-next="6" hidden>Continuer →</button>
+      </div>
+    </section>
+
+    <!-- 06 : POURQUOI MELANIE -->
+    <section class="screen screen--why" data-screen="6" aria-label="Pourquoi Melanie">
+      <div class="screen__inner">
+        <h2 class="title reveal">Pourquoi Melanie&nbsp;?</h2>
+        <div class="cards">
+          <div class="card reveal" data-anim="a"><span class="card__mark">✦</span><span>Ton sourire</span></div>
+          <div class="card reveal" data-anim="b"><span class="card__mark">✿</span><span>Ta façon d'être</span></div>
+          <div class="card reveal" data-anim="c"><span class="card__mark">❋</span><span>Ton énergie</span></div>
+          <div class="card reveal" data-anim="d"><span class="card__mark">♡</span><span>Les petits détails qui te rendent unique</span></div>
+          <div class="card reveal" data-anim="e"><span class="card__mark">✦</span><span>Simplement... toi</span></div>
+        </div>
+        <button class="btn btn--ghost reveal" type="button" data-next="7">Continuer →</button>
+      </div>
+    </section>
+
+    <!-- 07 : QUESTION -->
+    <section class="screen screen--question" data-screen="7" aria-label="Une question">
+      <div class="screen__inner">
+        <h2 class="title reveal">J'ai une petite question pour toi...</h2>
+        <p class="lede reveal">Est-ce que tu veux découvrir la suite&nbsp;?</p>
+        <div class="choices reveal">
+          <button class="btn btn--primary" type="button" data-choice="yes">Oui ❤️</button>
+          <button class="btn btn--ghost" type="button" data-choice="obviously">Évidemment 😌</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 : LETTRE -->
+    <section class="screen screen--letter" data-screen="8" aria-label="La lettre">
+      <div class="screen__inner">
+        <h2 class="title reveal">Pour Melanie ❤️</h2>
+        <div class="letter reveal">
+          <div class="letter__body" id="letter-body" aria-live="polite"></div>
+        </div>
+        <button class="skip reveal" type="button" id="letter-skip">Passer la lettre ▸</button>
+        <button class="btn btn--ghost reveal" type="button" id="letter-next" data-next="9" hidden>Continuer →</button>
+      </div>
+    </section>
+
+    <!-- 09 : SECRET -->
+    <section class="screen screen--secret" data-screen="9" aria-label="Un petit secret">
+      <div class="screen__inner">
+        <h2 class="title title--secret reveal" data-secret="1">Melanie...</h2>
+        <p class="lede reveal" data-secret="2">Je crois que tu as découvert presque tout.</p>
+        <p class="lede reveal" data-secret="3">Mais il reste une dernière chose.</p>
+        <button class="btn btn--secret reveal" type="button" id="secret-btn" data-secret="4">Ouvrir le dernier secret ✨</button>
+      </div>
+    </section>
+
+    <!-- 10 : FINALE -->
+    <section class="screen screen--finale" data-screen="10" aria-label="Le grand moment">
+      <div class="finale-flowers" aria-hidden="true">
+        <svg class="bouquet bouquet--corner bouquet--tl" viewBox="0 0 400 540"></svg>
+        <svg class="bouquet bouquet--corner bouquet--tr" viewBox="0 0 400 540"></svg>
+        <svg class="bouquet bouquet--corner bouquet--bl" viewBox="0 0 400 540"></svg>
+        <svg class="bouquet bouquet--corner bouquet--br" viewBox="0 0 400 540"></svg>
+      </div>
+      <div class="screen__inner screen__inner--finale">
+        <h1 class="name name--glow reveal" data-finale="1" id="finale-name">Melanie</h1>
+        <p class="finale-line reveal" data-finale="2">Certaines personnes méritent simplement<br />qu'on crée quelque chose de spécial pour elles.</p>
+        <p class="finale-line finale-voila reveal" data-finale="3">Alors voilà.</p>
+        <p class="finale-line finale-sign reveal" data-finale="4">C'était pour toi. ❤️</p>
+        <p class="finale-line finale-thanks reveal" data-finale="5">Merci d'être arrivée jusqu'ici.</p>
+        <button class="replay reveal" type="button" id="replay" data-finale="6">Recommencer ↺</button>
+        <p class="easteregg reveal" id="easteregg" hidden><span>Tu as trouvé le petit secret. 🌸</span><span>Mais maintenant, tu dois garder celui-ci pour toi. 🤫❤️</span></p>
+      </div>
+    </section>
+  </main>
+
+  <audio id="music" src="assets/music.mp3" loop preload="none"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Place ici, si tu le souhaites, les fichiers audio (tous optionnels) :
+
+- music.mp3   → musique de fond (bouton ♫)
+- click.mp3   → son de clic
+- flower.mp3  → son lors du choix d'une fleur
+- reveal.mp3  → son de la révélation du secret
+
+Sans ces fichiers, l'expérience fonctionne parfaitement, sans erreur.
