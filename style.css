@@ -671,6 +671,14 @@ main { position: relative; height: 100%; }
 .finale-sign { color: var(--rose-soft); font-style: italic; font-size: clamp(18px, 4.6vw, 25px); }
 .finale-thanks { color: var(--cream-dim); }
 
+.finale-signature {
+  font-family: var(--font-serif);
+  font-size: clamp(13px, 3.4vw, 17px);
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  opacity: 0.85;
+}
+
 .easteregg {
   display: flex;
   flex-direction: column;

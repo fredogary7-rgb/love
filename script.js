@@ -694,7 +694,7 @@
     var els = Array.prototype.slice.call(el.querySelectorAll('[data-finale]'))
       .sort(function (a, b) { return (+a.getAttribute('data-finale')) - (+b.getAttribute('data-finale')); });
     for (var i = 0; i < els.length; i++) els[i].classList.remove('is-in');
-    var delays = { 1: 2400, 2: 4000, 3: 5600, 4: 7000, 5: 9000, 6: 10400 };
+    var delays = { 1: 2400, 2: 4000, 3: 5600, 4: 7000, 5: 9000, 6: 10400, 7: 12400 };
     for (var i = 0; i < els.length; i++) {
       (function (node) {
         var k = +node.getAttribute('data-finale');
@@ -768,7 +768,7 @@
     if (!AC) return;
     audioCtx = new AC();
     masterGain = audioCtx.createGain();
-    masterGain.gain.value = 0.22;
+    masterGain.gain.value = 0.35;
     masterGain.connect(audioCtx.destination);
     delayNode = audioCtx.createDelay(1.0);
     delayNode.delayTime.value = 0.45;
