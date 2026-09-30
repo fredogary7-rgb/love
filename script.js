@@ -667,7 +667,7 @@
     var el = screens[0];
     var steps = el.querySelectorAll('[data-intro]');
     for (var i = 0; i < steps.length; i++) steps[i].classList.remove('is-in');
-    var delays = [400, 1500, 2700, 4000];
+    var delays = [400, 1500, 2700, 4000, 5000];
     for (var i = 0; i < steps.length; i++) {
       (function (node, d) {
         seqTimers.push(setTimeout(function () { node.classList.add('is-in'); }, d));

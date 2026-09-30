@@ -578,6 +578,21 @@ main { position: relative; height: 100%; }
   color: var(--cream-dim);
   max-width: 28em;
 }
+.intro-signature {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: clamp(13px, 3.4vw, 16px);
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+.intro-signature.is-in { opacity: 1; }
 
 /* ---------- Traitements du prénom ---------- */
 .name--gold {
