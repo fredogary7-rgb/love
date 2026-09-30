@@ -1,5 +1,5 @@
 /* ============================================================
-   Pour Melanie ❤️ — script.js
+   Pour Medusa ❤️ — script.js
    Navigation, particules, bouquet SVG, lettre, musique
    ============================================================ */
 (function () {
@@ -31,7 +31,7 @@
 
   /* ---------- Texte de la lettre ---------- */
   var letterLines = [
-    { t: 'Melanie,', gap: true },
+    { t: 'Medusa,', gap: true },
     { t: 'Je ne savais pas vraiment comment te dire certaines choses,' },
     { t: 'alors j\u2019ai choisi une mani\u00e8re un peu diff\u00e9rente.', gap: true },
     { t: 'Je voulais cr\u00e9er quelque chose qui ne soit pas seulement un message,' },
@@ -52,7 +52,7 @@
     { t: '\u2014 Quelqu\u2019un qui voulait simplement te faire sourire.', sign: true }
   ];
 
-  var HL_WORDS = ['Melanie', 'sourire', 'sp\u00e9cial', 'moment', 'toi'];
+  var HL_WORDS = ['Medusa', 'sourire', 'sp\u00e9cial', 'moment', 'toi'];
 
   function isWordBoundary(text, idx, len) {
     var before = idx === 0 ? ' ' : text.charAt(idx - 1);
