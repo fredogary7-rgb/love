@@ -1,6 +1,6 @@
-# Pour Medusa ❤️
+# Pour toi, Mabelle ❤️
 
-Une petite expérience web romantique, interactive et cinématique, créée spécialement pour **Medusa**.
+Une petite expérience web romantique, interactive et cinématique, créée spécialement pour **Mabelle**.
 
 ## Ouvrir l'expérience
 
@@ -41,12 +41,12 @@ melanie-love/
 
 ## Les 10 chapitres
 
-1. Introduction cinématique (noir, lumière, « Medusa ❤️ »)
+1. Introduction cinématique (noir, lumière, « Mabelle ❤️ »)
 2. Ouverture — effet « wow » plein écran
 3. Message d'introduction
 4. Le bouquet qui s'éveille (graine → tige → feuilles → fleurs)
 5. Choisis une fleur (petite interaction personnelle)
-6. « Pourquoi Medusa ? » (cartes animées)
+6. « Pourquoi toi ? » (cartes animées)
 7. Une petite question interactive
 8. La lettre (écriture progressive, mots mis en évidence)
 9. Un petit secret (explosion douce de particules)
