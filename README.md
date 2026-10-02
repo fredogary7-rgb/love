@@ -20,7 +20,7 @@ décompresse le ZIP puis ouvre simplement `index.html` (double-clic). C'est tout
 Tous les sons sont **facultatifs** : si les fichiers n'existent pas, tout fonctionne
 parfaitement, sans aucun message d'erreur visible.
 
-- `assets/music.mp3`  → musique de fond (bouton **♫** en haut à droite, jamais de lecture automatique)
+- `assets/music.m4a`  → musique de fond (bouton **♫** en haut à droite, jamais de lecture automatique)
 - `assets/click.mp3`  → petit son de clic
 - `assets/flower.mp3` → son lors du choix d'une fleur
 - `assets/reveal.mp3` → son lors de la révélation du secret
@@ -33,7 +33,7 @@ melanie-love/
   style.css       → design, animations, responsive
   script.js       → navigation, particules, bouquet, lettre, sons, séquences
   assets/
-    music.mp3     → (optionnel)
+    music.m4a     → (optionnel)
     click.mp3     → (optionnel)
     flower.mp3    → (optionnel)
     reveal.mp3    → (optionnel)

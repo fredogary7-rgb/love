@@ -846,11 +846,12 @@
     var fallbackDone = false;
     function fallbackToAmbient() {
       if (fallbackDone || !musicOn) return;
+      if (!audio.paused) return;
       fallbackDone = true;
       audio.pause();
       startAmbient();
     }
-    var fallback = setTimeout(fallbackToAmbient, 600);
+    var fallback = setTimeout(fallbackToAmbient, 3000);
 
     try {
       var p = audio.play();
@@ -941,6 +942,9 @@
     document.getElementById('secret-btn').addEventListener('click', openSecret);
 
     musicBtn.addEventListener('click', toggleMusic);
+    audio.addEventListener('playing', function () {
+      if (ambientPlaying) stopAmbient();
+    });
 
     // Saut de l'introduction (clic/tap)
     screens[0].addEventListener('click', function () {
