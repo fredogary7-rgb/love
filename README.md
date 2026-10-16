@@ -1,6 +1,6 @@
-# Pour toi, Mabelle ❤️
+# Pour toi, Viviane ❤️
 
-Une petite expérience web romantique, interactive et cinématique, créée spécialement pour **Mabelle**.
+Une petite expérience web romantique, interactive et cinématique, créée spécialement pour **Viviane**.
 
 ## Ouvrir l'expérience
 
@@ -41,7 +41,7 @@ melanie-love/
 
 ## Les 10 chapitres
 
-1. Introduction cinématique (noir, lumière, « Mabelle ❤️ »)
+1. Introduction cinématique (noir, lumière, « Viviane ❤️ »)
 2. Ouverture — effet « wow » plein écran
 3. Message d'introduction
 4. Le bouquet qui s'éveille (graine → tige → feuilles → fleurs)
